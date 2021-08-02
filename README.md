@@ -15,9 +15,7 @@
 ## 💑 Discussion?
 
 ```공지사항```이나 ```QnA``` 및 질의응답은 discussion을 이용해주세요.
-
-
-
+<br><br>
 
 # 📄 Contiribute GuideLine
 
