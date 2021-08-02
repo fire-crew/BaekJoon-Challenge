@@ -10,6 +10,7 @@
 ## Language
 
 - [ ] Java
+- [ ] Python
 - [ ] JavaScript
 
 ## 💑 Discussion?
