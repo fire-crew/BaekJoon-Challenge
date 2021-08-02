@@ -49,7 +49,7 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 ### 필수 - 반드시 아래 규칙들을 지켜주세요. 위배되는 솔루션 코드가 있으시 Reject 됩니다.
 
 **해당 규칙은 추가, 수정, 삭제가 될 수 있습니다.**
-- Rule 0 : 본 스터디원은 주 3회의 PR 의무가 있습니다. Discussion이나 QnA는 환영입니다. issue를 통해 각종 정보 PR도 환영합니다.
+- Rule 0 : 본 스터디원은 ❗️<code>주 3회</code>의 PR 의무가 있습니다. Discussion이나 QnA는 환영입니다. issue를 통해 각종 정보 PR도 환영합니다.
 - Rule 1 : 다른 사람의 솔루션을 자신이 푼 것처럼 Pull Request (PR) 하시면 **절대❗️** 안됩니다.
 - Rule 2 : 아래와 같이 솔루션 맨 위에 정보를 **반드시** 넣어주세요. (Authored By에는 백준 닉네임으로 넣어야 합니다.)
 
