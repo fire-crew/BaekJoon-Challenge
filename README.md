@@ -63,7 +63,7 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 - Rule 4 : `Allow edits by maintainers` 옵션을 허용으로 둬야합니다.
 - Rule 5 : 분류에 맞는 솔루션을 올려야 합니다.
 - Rule 6 : 분류에 없을시 구분 폴더를 생성후 만들어 주세요.
-- Rule 7 : Commit시 Message는 Add [풀이번호] [언어] solution 으로 통일합니다.
+- Rule 7 : Commit시 Message는 ```Add [풀이번호] [언어] solution``` 으로 통일합니다.
 - Rule 8 : 같은 문제풀이가 있을시 좋은 효율의 코드를 우선합니다.
 
 #### Python
