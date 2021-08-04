@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: issueWelcomeBOT
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 이슈보고 감사드립니다. 빠른 시일 내 답변드리겠습니다!'
+            })
