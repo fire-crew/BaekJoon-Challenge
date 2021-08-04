@@ -5,12 +5,16 @@ import requests
 import os
 import sys
 
+def printError(tmp):
+    print('[ERROR]: ',tmp)
+
+if sys.stdin.readline().strip()=="" || sys.stdin.readline().strip()==null:
+    printError('comment를 입력해주세요 \n judge {path}')
+    exit(0)
+
 path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
-
-def printError(tmp):
-    print('[ERROR]: ',tmp)
 
 if language not in [ 'py', 'js', 'java']:
     check_all = False
