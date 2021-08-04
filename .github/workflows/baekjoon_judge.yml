@@ -43,7 +43,7 @@ jobs:
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    body: 'ERROR' 
+                    body: '❗[ERROR] contributing Rule을 숙지한뒤 PR부탁드립니다.' 
                 });
                 github.issues.addLabels({
                     issue_number: context.issue.number,
@@ -59,7 +59,7 @@ jobs:
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    body: text
+                    body: "👍"+text
                 });
                 github.issues.addLabels({
                     issue_number: context.issue.number,
