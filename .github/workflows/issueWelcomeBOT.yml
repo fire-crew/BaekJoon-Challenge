@@ -3,37 +3,21 @@
 name: issueWelcomeBOT
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [opened, edited, reopened]
   issues:
     types: [opened]
 
 jobs:
   welcome:
-    if: github.event_name =='pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v4
+      - uses: actions-cool/pr-welcome@v1.1.2
         with:
-          script: |
-            // Get a list of all issues created by the PR opener
-            // See: https://octokit.github.io/rest.js/#pagination
-            const creator = context.payload.sender.login
-            const opts = github.issues.listForRepo.endpoint.merge({
-              ...context.issue,
-              creator,
-              state: 'all'
-            })
-            const issues = await github.paginate(opts)
-
-            for (const issue of issues) {
-              if (issue.number === context.issue.number) {
-                continue
-              }
-            }
-
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '👋 Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.'
-            })
+          token: ${{ secrets.GITHUB_TOKEN }}
+          refuse-issue-label: 'xxx'
+          need-creator-authority: 'write'
+          comment: |
+            Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.
+          emoji: 'laugh'
+          close: true
