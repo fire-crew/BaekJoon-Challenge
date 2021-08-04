@@ -9,14 +9,14 @@ path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
 
-def printError():
-    print("ERROR")
+def printError(tmp):
+    print('[ERROR]: ',tmp)
 
 if language not in [ 'py', 'js', 'java','cpp' ]:
     check_all = False
 
 if not check_all:
-    printError()
+    printError('지원하는 언어가 아닙니다.')
     exit(0)
 
 data = list()
@@ -39,7 +39,7 @@ if user_name == '' or link == '' or HASH == 0:
     check_all = False
 
 if not check_all:
-    printError()
+    printError('주석 입력 양식에 어긋납니다. 주석을 수정해주세요.')
     exit(0)
 
 # check Link
@@ -55,7 +55,7 @@ if boj_user != user_name or result != "맞았습니다!!":
     check_all = False
 
 if not check_all:
-    printError()
+    printError('문제가 틀렸습니다')
     exit(0)
 
 problemID = path.split('/')[-2]
