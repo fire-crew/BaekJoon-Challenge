@@ -1,31 +1,19 @@
 name: CreatePR_Judge
 
-on: pull_request
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
-   build:
+  comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: refs/pull/${{ github.event.issue.number }}/merge
-      - name: comment
-        uses: actions/github-script@v4
+      - uses: actions/github-script@v4
         with:
           script: |
-            github.issues.createComment({ 
+            github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Please create comment! : judge (path) 입력을 통해 통과 유무를 알 수 있습니다. ex)judge solution/Implementation/17173/main.java' 
-             });
-            github.issues.addLabels({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: [ "enhancement" ] 
-             });
-            
-
-            
+              body: '👋 PR 감사합니다(judge (path) 코멘트를 필수적으로 등록해주세요), ex)judge test/BFS/16947/main.java'
+            })
