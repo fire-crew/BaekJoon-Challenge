@@ -1,14 +1,16 @@
-name: Greetings PR
+# This is a basic workflow to help you get started with Actions
+
+name: comment
 
 on: [pull_request]
-
+    
 jobs:
-  greeting:
+  comment:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
+    - uses: github-actions-up-and-running/pr-comment@v1.0.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        pr-message: 'Please regist comment with Command \n run : run (path)/문제 테스팅(Success/Error) \n   ex) run test/Implementation/2857/main.java'
+        message: Nice PR!👍 Please regist comment with Command [run (path)]
