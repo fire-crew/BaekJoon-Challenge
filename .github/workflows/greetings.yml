@@ -13,5 +13,3 @@ jobs:
       - uses: JoseThen/comment-pr@v1
         with:
           comment: 'This PR is the bees knees!'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
