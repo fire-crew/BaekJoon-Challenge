@@ -5,41 +5,42 @@ name: greetings
 on: pull_request
 
 jobs:
-  welcome:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v4
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      - name: Setup pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install bs4 requests
+      - name: Run judge
+        run: |
+          python scripts/welcomeJudge.py result.out
+      - name: Save result
+        run: |
+          cat result.out
+          echo "RESULT=`head -1 result.out`" >> $GITHUB_ENV
+          tail -5 result.out > result2.out
+      - name: comment
+        uses: actions/github-script@v4
         with:
           script: |
-            // Get a list of all issues created by the PR opener
-            // See: https://octokit.github.io/rest.js/#pagination
-            const creator = context.payload.sender.login
-            const opts = github.issues.listForRepo.endpoint.merge({
-              ...context.issue,
-              creator,
-              state: 'all'
-            })
-            const issues = await github.paginate(opts)
-
-            for (const issue of issues) {
-              if (issue.number === context.issue.number) {
-                continue
-              }
-
-              if (issue.pull_request) {
-                github.issues.createComment({
+                const fs = require('fs');
+                var text = fs.readFileSync('result2.out', 'utf8');
+                github.issues.createComment({ 
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    body: 'Nice PR!👍 Please regist comment with Command [run (path)]'
-            })              
-                return // Creator is already a contributor.
-              }
-            }
-
-            await github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'Welcome, new contributor!'
-            })
+                    body: "👍"+text
+                });
+                github.issues.addLabels({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    labels: [ "JudgePR" ] 
+                });
+            
