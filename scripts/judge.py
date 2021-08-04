@@ -12,7 +12,7 @@ check_all = True
 def printError():
     print("ERROR")
 
-if language not in [ 'py', 'cpp', 'java' ]:
+if language not in [ 'py', 'js', 'java' ]:
     check_all = False
 
 if not check_all:
