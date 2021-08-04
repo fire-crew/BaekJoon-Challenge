@@ -1,6 +1,6 @@
 // Authored by : choipureum
 // Co-authored by : -
-// Link : https://www.acmicpc.net/source/31815683
+// Link : http://boj.kr/4ea0c0604cd04373a901ec2223db6b99
 
 import java.util.*;
 import java.lang.*;
