@@ -1,4 +1,4 @@
-name: Greetings
+name: Greetings PR
 
 on: [pull_request]
 
