@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.comment.body, 'run') 
     runs-on: ubuntu-latest
     env:
       filepath: "${{ github.event.comment.body }}"
