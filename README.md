@@ -29,7 +29,7 @@
 ## 📁 Repository Architecture
 
 각 알고리즘에 대한 문제들은은  ```해당 알고리즘 폴더```에서 볼 수 있습니다.  
-data_structure에 있는 ```백준 1158번 요세푸스 문제```에 대한 솔루션은 [```/data_structure/1158```](https://github.com/MakeFire/BaekJoon-Challenge/data_structure/1158)에 있습니다.해당 경로에 솔루션 파일이 있습니다.
+solution/data_structure에 있는 ```백준 1158번 요세푸스 문제```에 대한 솔루션은 [```/data_structure/1158```](https://github.com/MakeFire/solution/BaekJoon-Challenge/data_structure/1158)에 있습니다.해당 경로에 솔루션 파일이 있습니다.
 
 
 ## 💻 Contribute 에 대한 설명
@@ -53,7 +53,10 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 **해당 규칙은 추가, 수정, 삭제가 될 수 있습니다.**
 - Rule 0 : 본 스터디원은 ❗️<code>주 3회</code>의 PR 의무가 있습니다. Discussion이나 QnA는 환영입니다. issue를 통해 각종 정보 PR도 환영합니다.
 - Rule 1 : 다른 사람의 솔루션을 자신이 푼 것처럼 Pull Request (PR) 하시면 **절대❗️** 안됩니다.
-- Rule 2 : 아래와 같이 솔루션 맨 위에 정보를 **반드시** 넣어주세요. (Authored By에는 백준 닉네임으로 넣어야 합니다.)
+- Rule 2 : 아래와 같이 솔루션 맨 위에 정보를 ❗️**반드시** 넣어주세요. (Authored By에는 github id로 넣어야 합니다.)<br>
+```
+Link에 대한 주솟값은 *https://www.acmicpc.net/source/31815683* 와 같은 문제 풀이 이후 주솟값 페이지 하단의 *공유* button 클릭시 생성가능합니다. 꼭 첨부 부탁드립니다.
+```
 
 ```java
 // Authored by : choipureum
@@ -75,7 +78,7 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 
 #### Java
 
-- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력을 받아야 합니다.
+- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력을 받아야 합니다.<br>
 *입력예시*
 
 ```java
