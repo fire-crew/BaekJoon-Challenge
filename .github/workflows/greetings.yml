@@ -7,10 +7,13 @@ on: [pull_request]
 jobs:
   comment:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
-    - uses: github-actions-up-and-running/pr-comment@v1.0.0
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        message: Nice PR!👍 Please regist comment with Command [run (path)]
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Nice PR!👍 Please regist comment with Command [run (path)]'
+            })
