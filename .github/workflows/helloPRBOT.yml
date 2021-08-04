@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+
+name: issueWelcomeBOT
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  issueWelcomeBOT:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for PR! Please regist comment with command: \n ** run path **반드시 테스트를 해주세요. \n (ex)run test/Implementation/16170/main.java)'
+            })

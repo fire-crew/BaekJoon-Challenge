@@ -4,6 +4,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 ![문의사항](https://img.shields.io/badge/%EB%AC%B8%EC%9D%98%ED%95%98%EA%B8%B0-pooreumsunny%40gamil.com-green)
 ![Greet everyone](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/Demo.yml/badge.svg)
+![Judge](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/baekjoon_judge.yml/badge.svg)
 
 알고리즘 공부 및 코딩테스트 대비 오픈소스 백준 풀이 레포지토리입니다. 
 본 레포는 스터디 목적으로 만들어졌으며 모든 PR은 환영합니다.
@@ -29,7 +30,7 @@
 ## 📁 Repository Architecture
 
 각 알고리즘에 대한 문제들은은  ```해당 알고리즘 폴더```에서 볼 수 있습니다.  
-data_structure에 있는 ```백준 1158번 요세푸스 문제```에 대한 솔루션은 [```/data_structure/1158```](https://github.com/MakeFire/BaekJoon-Challenge/data_structure/1158)에 있습니다.해당 경로에 솔루션 파일이 있습니다.
+solution/data_structure에 있는 ```백준 1158번 요세푸스 문제```에 대한 솔루션은 [```/data_structure/1158```](https://github.com/MakeFire/solution/BaekJoon-Challenge/data_structure/1158)에 있습니다.해당 경로에 솔루션 파일이 있습니다.
 
 
 ## 💻 Contribute 에 대한 설명
@@ -53,7 +54,10 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 **해당 규칙은 추가, 수정, 삭제가 될 수 있습니다.**
 - Rule 0 : 본 스터디원은 ❗️<code>주 3회</code>의 PR 의무가 있습니다. Discussion이나 QnA는 환영입니다. issue를 통해 각종 정보 PR도 환영합니다.
 - Rule 1 : 다른 사람의 솔루션을 자신이 푼 것처럼 Pull Request (PR) 하시면 **절대❗️** 안됩니다.
-- Rule 2 : 아래와 같이 솔루션 맨 위에 정보를 **반드시** 넣어주세요. (Authored By에는 백준 닉네임으로 넣어야 합니다.)
+- Rule 2 : 아래와 같이 솔루션 맨 위에 정보를 ❗️**반드시** 넣어주세요. (Authored By에는 github id로 넣어야 합니다.)<br>
+```
+Link에 대한 주솟값은 *https://www.acmicpc.net/source/31815683* 와 같은 문제 풀이 이후 주솟값 페이지 하단의 *공유* button 클릭시 생성가능합니다. 꼭 첨부 부탁드립니다.
+```
 
 ```java
 // Authored by : choipureum
@@ -75,7 +79,63 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 
 #### Java
 
-- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력을 받아야 합니다.
+- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력받기를 권장합니다(필수아님).<br>
+*입력예시*
+
+```java
+# Authored by : samuel95
+# Co-authored by : -
+# Link : https://www.acmicpc.net/source/31815683
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        FastReader rd = new FastReader();
+
+        int a = rd.nextInt();
+        int b = rd.nextInt();
+        System.out.println(a + b);
+    }
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while(st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() { return Integer.parseInt(next()); }
+        long nextLong() { return Long.parseLong(next()); }
+        double nextDouble() { return Double.parseDouble(next()); }
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+}
+```
 
 ### 권장 - 수정할 사항이 있으면 제가 직접 수정을 할 수 있습니다. 수정을 할께 있다면 제 닉네임 Co-Author에 추가합니다.
 

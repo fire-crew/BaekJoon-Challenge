@@ -1,7 +1,6 @@
 // Authored by : choipureum
 // Co-authored by : -
 // Link : http://boj.kr/aa6aba0e97a14ba3ac2cbac44a93498a
-
 import java.util.*;
 import javax.swing.text.AbstractDocument.BranchElement;
 import java.io.*;
