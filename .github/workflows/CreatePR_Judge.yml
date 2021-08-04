@@ -1,0 +1,27 @@
+name: CreatePR_Judge
+
+on: pull_request
+
+jobs:
+   build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: comment
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.issues.createComment({ 
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Please create comment! : judge {path} 입력을 통해 통과 유무를 알 수 있습니다. ex)judge solution/Implementation/17173/main.java' 
+             });
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: [ "enhancement" ] 
+             });
+            
+
+            
