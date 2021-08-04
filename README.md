@@ -76,6 +76,62 @@ Pull Request에 대한 설명은 [여기](https://wayhome25.github.io/git/2017/0
 #### Java
 
 - Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력을 받아야 합니다.
+*입력예시*
+
+```java
+# Authored by : samuel95
+# Co-authored by : -
+# Link : https://www.acmicpc.net/source/31815683
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        FastReader rd = new FastReader();
+
+        int a = rd.nextInt();
+        int b = rd.nextInt();
+        System.out.println(a + b);
+    }
+
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        String next() {
+            while(st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() { return Integer.parseInt(next()); }
+        long nextLong() { return Long.parseLong(next()); }
+        double nextDouble() { return Double.parseDouble(next()); }
+        String nextLine() {
+            String str = "";
+            try {
+                str = br.readLine();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
+    }
+}
+```
 
 ### 권장 - 수정할 사항이 있으면 제가 직접 수정을 할 수 있습니다. 수정을 할께 있다면 제 닉네임 Co-Author에 추가합니다.
 
