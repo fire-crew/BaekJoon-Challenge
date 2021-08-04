@@ -8,7 +8,7 @@ import sys
 path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
-
+print(language)
 def printError():
     print("ERROR")
 
