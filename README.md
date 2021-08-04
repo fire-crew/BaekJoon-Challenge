@@ -78,7 +78,7 @@ Link에 대한 주솟값은 *https://www.acmicpc.net/source/31815683* 와 같은
 
 #### Java
 
-- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력을 받아야 합니다.<br>
+- Rule 17 : [해당 코드](http://boj.kr/474912cdad044873b6aa14e34643f7b7) 처럼 FastReader Class를 이용해서 입력받기를 권장합니다(필수아님).<br>
 *입력예시*
 
 ```java
