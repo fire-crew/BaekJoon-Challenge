@@ -1,7 +1,8 @@
-// Authored by : choipureum
-// Co-authored by : -
-// Link : http://boj.kr/c08e0d4070734211a289fdb7dc2d17ab
-
+/*
+ Authored by : choipureum
+ Co-authored by : -
+ Link : http://boj.kr/c08e0d4070734211a289fdb7dc2d17ab
+*/
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
