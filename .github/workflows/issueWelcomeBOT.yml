@@ -8,20 +8,6 @@ on:
     types: [opened]
 
 jobs:
-  comment:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v4
-        with:
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '👋 Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.'
-            })
-            
-
   welcome:
     if: github.event_name =='pull_request'
     runs-on: ubuntu-latest
@@ -43,15 +29,11 @@ jobs:
               if (issue.number === context.issue.number) {
                 continue
               }
-
-              if (issue.pull_request) {
-                return // Creator is already a contributor.
-              }
             }
 
             await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Welcome, new contributor!'
+              body: '👋 Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.'
             })
