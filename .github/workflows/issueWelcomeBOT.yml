@@ -3,28 +3,19 @@
 name: issueWelcomeBOT
 
 on:
-  pull_request_target:
-    types: [opened, edited, reopened]
+  issues:
+    types: [opened]
 
 jobs:
-  welcome:
+  issueWelcomeBOT:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/pr-welcome@v1.1.2
+      - uses: actions/github-script@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          refuse-issue-label: 'xxx'
-          need-creator-authority: 'write'
-          comment: |
-            Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.
-          emoji: 'laugh'
           script: |
-                github.issues.createComment({ 
-                    issue_number: context.issue.number,
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    body: 'Thanks you! PR시 test command는 run (path)입니다. PR시 테스트는 반드시 해주세요.'
-                });
-          
-          
-          
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting! 빠른 시일내에 답변드리겠습니다.'
+            })
