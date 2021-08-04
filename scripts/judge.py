@@ -63,7 +63,7 @@ tag       = path.split('/')[-3]
 print("SUCCESS")
 print(f"솔루션 경로 : {path}")
 print(f"BOJ USER : {boj_user}")
-print(f"사용언어":{language})
+print(f"사용언어 :{language}")
 print(f"결과 : {result}")
 print(f"메모리 : {memory}")
 print(f"실행 시간 : {time}")
