@@ -2,8 +2,6 @@
 // Co-authored by : -
 // Link : http://boj.kr/ead9568e914c406aa1914b355aa3c3cf
 
-package com.company;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
