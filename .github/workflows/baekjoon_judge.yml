@@ -68,3 +68,9 @@ jobs:
                     labels: [ "Simple Check Success" ] 
                 });
             }
+  merge:
+    if: contains(text, 'Success') 
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo PR #${{ github.event.number }} has been merged
