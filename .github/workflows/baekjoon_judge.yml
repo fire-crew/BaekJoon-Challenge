@@ -55,7 +55,7 @@ jobs:
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    labels: [ "Simple Check Failed" ] 
+                    labels: [ "Failed" ] 
                 });
             }
             else {
@@ -71,7 +71,7 @@ jobs:
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    labels: [ "Simple Check Success" ] 
+                    labels: [ "Done" ] 
                 });
             }
             
@@ -86,7 +86,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         test: false
         reviewers: false
-        labels: Simple Check Success
+        labels: Done
         checks_enabled: false
         method: merge
         delete_source_branch: true
