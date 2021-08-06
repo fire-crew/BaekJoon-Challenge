@@ -69,6 +69,7 @@ jobs:
                 });
             }
   merge:
+    needs: build
     if: contains(text, 'Success') 
     runs-on: ubuntu-latest
     steps:
