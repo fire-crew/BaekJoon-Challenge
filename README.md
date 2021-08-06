@@ -5,6 +5,8 @@
 ![문의사항](https://img.shields.io/badge/%EB%AC%B8%EC%9D%98%ED%95%98%EA%B8%B0-pooreumsunny%40gamil.com-green)
 ![Greet everyone](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/Demo.yml/badge.svg)
 ![Judge](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/baekjoon_judge.yml/badge.svg)
+![hellobot](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/helloPRBOT.yml/badge.svg)
+![issuebot](https://github.com/IloveDev-Crew/BaekJoon-Challenge/actions/workflows/issueWelcomeBOT.yml/badge.svg)
 
 알고리즘 공부 및 코딩테스트 대비 오픈소스 백준 풀이 레포지토리입니다. 
 본 레포는 스터디 목적으로 만들어졌으며 모든 PR은 환영합니다.
