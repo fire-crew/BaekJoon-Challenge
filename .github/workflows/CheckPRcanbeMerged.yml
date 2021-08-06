@@ -2,8 +2,7 @@ name: Check PR can be merged
 on:
   pull_request:
     types: [labeled]
-    branches:
-      - main
+
 jobs:
   Check PR can be merged:
     runs-on: ubuntu-latest
