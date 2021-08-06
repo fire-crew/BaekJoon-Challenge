@@ -69,7 +69,7 @@ jobs:
                 });
             }
   merge:
-    if: contains(github.event.comment.body, 'run') 
+    if: contains(github.event.comment.body, 'Success') 
     runs-on: ubuntu-latest
     steps:
       - name: Automatically Merge PR
