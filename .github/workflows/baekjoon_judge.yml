@@ -39,6 +39,10 @@ jobs:
           cat result.out
           echo "RESULT=`head -1 result.out`" >> $GITHUB_ENV
           tail -5 result.out > result2.out
+      - name: Automatic Merge
+      # You may pin to the exact commit or the version.
+      # uses: lots0logs/gh-action-auto-merge@e1c6c23f77ac698552eb5490a0f0f48e60aab3e0
+        uses: lots0logs/gh-action-auto-merge@1.0.0
       - name: comment
         uses: actions/github-script@v4
         with:
@@ -73,19 +77,11 @@ jobs:
                     repo: context.repo.repo,
                     labels: [ "Done" ] 
                 });
+                github.issues.createComment({ 
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: "/merge main"
+                });
             }
-  merge:
-    runs-on: ubuntu-latest
-    name: Merge
-    steps:
-    - name: Integration check
-      uses: squalrus/merge-bot@v0.1.0
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        test: true
-        reviewers: false
-        labels: Done
-        checks_enabled: false
-        method: merge
-        delete_source_branch: false
-            
+  
