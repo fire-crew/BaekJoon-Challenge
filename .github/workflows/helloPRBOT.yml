@@ -17,5 +17,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for PR! Please regist comment with command: \n ** run path **반드시 테스트를 해주세요. \n (ex)run test/Implementation/16170/main.java)'
+              body: '👋 Thanks for PR! Please regist comment with command: \n ** run (경로) ** 반드시 테스트를 해주세요. \n (예시) run solution/Tree/16170/main.java)'
             })
