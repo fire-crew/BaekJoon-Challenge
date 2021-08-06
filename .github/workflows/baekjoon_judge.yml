@@ -86,7 +86,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         test: false
         reviewers: false
-        labels: Done
+        label: Done
         checks_enabled: false
         method: merge
         delete_source_branch: true
