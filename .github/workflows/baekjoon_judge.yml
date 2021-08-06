@@ -73,12 +73,6 @@ jobs:
                     repo: context.repo.repo,
                     labels: [ "Done" ] 
                 });
-                github.issues.createComment({ 
-                    issue_number: context.issue.number,
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    body: "merge"
-                });
             } 
   automerge:
     needs: build
@@ -90,10 +84,6 @@ jobs:
       MERGE_COMMIT_MESSAGE: "pull-request-description"
       MERGE_FORKS: "false"
       MERGE_RETRIES: "6"
-      MERGE_RETRY_SLEEP: "10000"
-      UPDATE_LABELS: "Done"
-      UPDATE_METHOD: "rebase"
-      PULL_REQUEST: "1234"
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.2"
