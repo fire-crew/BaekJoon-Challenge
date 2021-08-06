@@ -83,6 +83,17 @@ jobs:
   automerge:
     needs: build
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      MERGE_LABELS: "Done"
+      MERGE_METHOD: "merge"
+      MERGE_COMMIT_MESSAGE: "pull-request-description"
+      MERGE_FORKS: "false"
+      MERGE_RETRIES: "6"
+      MERGE_RETRY_SLEEP: "10000"
+      UPDATE_LABELS: "Done"
+      UPDATE_METHOD: "rebase"
+      PULL_REQUEST: "1234"
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.2"
