@@ -3,7 +3,13 @@ name: Auto Judge
 on:
   issue_comment:
     types: [ created ]
-
+  
+  # Try enabling auto-merge for the specified pull request or all open pull requests if none is specified.
+  workflow_dispatch:
+    inputs:
+      pull-request:
+        description: Pull Request Number
+        required: false
 jobs:
   build:
     if: contains(github.event.comment.body, 'run') 
@@ -69,25 +75,14 @@ jobs:
                 });
             }
             
-  merged:
+  automerge:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: reitermarkus/automerge@v2
         with:
-          ref: refs/pull/${{ github.event.issue.number }}/merge
-        
-      - name: Automatically Merge PR
-        uses: plm9606/automerge_actions@1.2.2
-        with:
-          # The label name to automatically merge. Default is "automerge".
-          label-name: "Simple Check Success"
-          # The number of reviewers to automatically merge. Default is 1.
-          reviewers-number: 1
-          # The merge method ("merge", "squash", "rebase"). Default is "merge"
-          merge-method: "merge"
-          # Let the bot delete the merged branch. true or false.
-          auto-delete: false
-          # GitHub WebHook Secret Token
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          merge-method: merge
+          required-labels: Simple Check Success
+          pull-request: ${{ github.event.inputs.pull-request }}
+          dry-run: true
