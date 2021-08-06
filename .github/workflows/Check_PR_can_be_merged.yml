@@ -1,25 +1,26 @@
-name: Merge Schedule
+name: Check PR can be merged
 on:
   pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-  schedule:
-    # https://crontab.guru/every-hour
-    - cron: 0/1 * * * *
-
+    types: [labeled]
+    branches:
+      - main
 jobs:
-  merge_schedule:
-    if: contains( github.event.pull_request.labels.*.name, 'Simple Check Success')
+  Run Actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: gr2m/merge-schedule-action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Automatically Merge PR
+        uses: plm9606/automerge_actions@1.2.2
         with:
-          # Merge method to use. Possible values are merge, squash or
-          # rebase. Default is merge.
-          merge_method: merge
-          #  Time zone to use. Default is UTC.
-          time_zone: "America/Los_Angeles"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The label name to automatically merge. Default is "automerge".
+          label-name: "Simple Check Success"
+          # The number of reviewers to automatically merge. Default is 1.
+          reviewers-number: 1
+          # The merge method ("merge", "squash", "rebase"). Default is "merge"
+          merge-method: "merge"
+          # Let the bot delete the merged branch. true or false.
+          auto-delete: false
+          # GitHub WebHook Secret Token
+          github-token: ${{ secrets.GITHUB_TOKEN }}
