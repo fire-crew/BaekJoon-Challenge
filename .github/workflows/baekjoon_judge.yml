@@ -69,16 +69,9 @@ jobs:
                 });
             }
   merge:
+    if: contains(github.event.pull_request.labels.*.name, 'Simple Check Success')
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Automatically Merge PR
-        uses: plm9606/automerge_actions@1.2.2
-        with:
-          # The label name to automatically merge. Default is "automerge".
-          label-name: "Simple Check Success"
-          # Let the bot delete the merged branch. true or false.
-          auto-delete: false
-          # GitHub WebHook Secret Token
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+    - run: |
+        echo PR #${{ github.event.number }} has been merged
