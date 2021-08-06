@@ -71,6 +71,7 @@ jobs:
   merge:
     if: contains(github.event.comment.body, 'Success') 
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Automatically Merge PR
         uses: plm9606/automerge_actions@1.2.2
