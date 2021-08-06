@@ -1,11 +1,25 @@
-name: Check PR can be merged
+name: Merge Schedule
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+  schedule:
+    # https://crontab.guru/every-hour
+    - cron: 0 0 * * *
+
 jobs:
-  merge:
-    if: contains(github.event.comment.body, 'Success') 
+  merge_schedule:
+    if: contains( github.event.pull_request.labels.*.name, 'Simple Check Success')
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo PR #${{ github.event.number }} has been merged
+      - uses: gr2m/merge-schedule-action@v1
+        with:
+          # Merge method to use. Possible values are merge, squash or
+          # rebase. Default is merge.
+          merge_method: merge
+          #  Time zone to use. Default is UTC.
+          time_zone: "America/Los_Angeles"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
