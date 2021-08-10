@@ -62,9 +62,11 @@ Link에 대한 주솟값은 *https://www.acmicpc.net/source/31815683* 와 같은
 ```
 
 ```java
-// Authored by : choipureum
-// Co-authored by : -
-// Link : http://boj.kr/3ee3d9284f2e4fd7b92b2a22e17d02d6
+/*
+ Authored by : choipureum
+ Co-authored by : -
+ Link : http://boj.kr/3ee3d9284f2e4fd7b92b2a22e17d02d6
+*/
 ```
 
 - Rule 3 : Pull Request (PR) 하나 당 솔루션 하나만 있어야 합니다. 같은 문제여도 언어마다 다르게 PR을 보내야 합니다. 이는 관리의 편의성을 위해 적용합니다.
