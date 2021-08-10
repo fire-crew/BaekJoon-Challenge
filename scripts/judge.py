@@ -42,7 +42,8 @@ if user_name == '' or link == '' or HASH == 0:
 if not check_all:
     printError('주석 입력 양식에 어긋납니다. 주석을 수정해주세요.')
     exit(0)
-
+printError(Hash)
+exit(0)
 # check Link
 url  = f"https://www.acmicpc.net/source/share/{HASH}"
 req  = requests.get(url).text
