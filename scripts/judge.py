@@ -45,7 +45,6 @@ if not check_all:
 # check Link
 url  = f"https://www.acmicpc.net/source/share/{HASH}"
 req  = requests.get(url).text
-printError(Hash);
 html = bs(req, 'html.parser')
 boj_user = html.select('body > div.wrapper > div.breadcrumbs > div > ul > li > a')[0].text
 result   = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(1) > span')[0].text
