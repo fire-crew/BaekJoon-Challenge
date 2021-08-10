@@ -5,13 +5,13 @@ import requests
 import os
 import sys
 
-def printError(tmp):
-    print('[ERROR]: ',tmp)
-
 path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
 
+def printError(tmp):
+    print('[ERROR]: ',tmp)
+    
 if language not in [ 'py', 'js', 'java']:
     check_all = False
 
@@ -46,7 +46,7 @@ if not check_all:
 url  = f"https://www.acmicpc.net/source/share/{HASH}"
 req  = requests.get(url).text
 html = bs(req, 'html.parser')
-print(html)
+
 boj_user = html.select('body > div.wrapper > div.breadcrumbs > div > ul > li > a')[0].text
 result   = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(1) > span')[0].text
 memory   = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(2)')[0].text + " KB"
