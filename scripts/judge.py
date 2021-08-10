@@ -22,7 +22,7 @@ if not check_all:
 data = list()
 with open(path, 'r') as f:
     data = f.readlines()
-
+printError(data)
 user_name = ''
 link      = ''
 HASH      = 0
