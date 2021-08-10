@@ -23,6 +23,8 @@ data = list()
 with open(path, 'r') as f:
     data = f.readlines()
 
+printError(data)
+exit(0)
 user_name = ''
 link      = ''
 HASH      = 0
