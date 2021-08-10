@@ -25,7 +25,7 @@ with open(path, 'r') as f:
 
 user_name = ''
 link = ''
-HASH = 0
+Hash = 0
 
 for line in data:
     after_strip = line.strip()
@@ -33,10 +33,10 @@ for line in data:
         user_name = after_strip.split(':')[-1].strip()
     if "Link" in after_strip:
         link      = after_strip.split(':')[-1].strip()
-        HASH      = link.split('/')[-1]
+        Hash      = link.split('/')[-1]
 
         
-if user_name == '' or link == '' or HASH == 0:
+if user_name == '' or link == '' or Hash == 0:
     check_all = False
 
 if not check_all:
@@ -44,7 +44,7 @@ if not check_all:
     exit(0)
 
 # check Link
-url  = f"https://www.acmicpc.net/source/share/{HASH}"
+url  = f"https://www.acmicpc.net/source/share/{Hash}"
 req  = requests.get(url).text
 html = bs(req, 'html.parser')
 
