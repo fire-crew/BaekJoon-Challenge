@@ -23,8 +23,6 @@ data = list()
 with open(path, 'r') as f:
     data = f.readlines()
 
-printError(data)
-exit(0)
 user_name = ''
 link      = ''
 HASH      = 0
@@ -37,6 +35,7 @@ for line in data:
         link      = after_strip.split(':')[-1].strip()
         HASH      = link.split('/')[-1]
 
+        
 if user_name == '' or link == '' or HASH == 0:
     check_all = False
 
