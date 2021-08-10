@@ -5,6 +5,9 @@ import requests
 import os
 import sys
 
+user_name = ''
+link      = ''
+HASH      = 0
 path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
@@ -23,10 +26,6 @@ data = list()
 with open(path, 'r') as f:
     data = f.readlines()
 
-user_name = ''
-link      = ''
-HASH      = 0
-
 for line in data:
     after_strip = line.strip()
     if "Authored by" in after_strip:
@@ -42,8 +41,7 @@ if user_name == '' or link == '' or HASH == 0:
 if not check_all:
     printError('주석 입력 양식에 어긋납니다. 주석을 수정해주세요.')
     exit(0)
-printError(Hash)
-exit(0)
+
 # check Link
 url  = f"https://www.acmicpc.net/source/share/{HASH}"
 req  = requests.get(url).text
