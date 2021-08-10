@@ -47,7 +47,7 @@ url  = f"https://www.acmicpc.net/source/share/{HASH}"
 req  = requests.get(url).text
 html = bs(req, 'html.parser')
 
-
+boj_user = html.select('body > div.wrapper > div.breadcrumbs > div > ul > li > a')[0].text
 result   = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(1) > span')[0].text
 memory   = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(2)')[0].text + " KB"
 time     = html.select('body > div.wrapper > div.container.content > div > section > div:nth-child(3) > div > table > tbody > tr > td:nth-child(3)')[0].text + " ms"
