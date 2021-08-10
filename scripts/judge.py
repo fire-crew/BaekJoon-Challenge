@@ -5,13 +5,13 @@ import requests
 import os
 import sys
 
-def printError(tmp):
-    print('[ERROR]: ',tmp)
-
 path = sys.stdin.readline().strip().split(' ')[1]
 language = path.split('.')[-1]
 check_all = True
 
+def printError(tmp):
+    print('[ERROR]: ',tmp)
+    
 if language not in [ 'py', 'js', 'java']:
     check_all = False
 
